@@ -18,9 +18,12 @@
 ### 当前连载进度
 
 - [x] [全书总纲与人物志](docs/00-outline.md)
-- [x] [第 1 章 从邯郸肉票到千古一帝](docs/01-qin-shihuang.md)
-- [ ] 第 2 章 失控的战车与沙丘鲍鱼（待更新）
-- [ ] 第 3–24 章（持续创作中）
+- [x] **第一卷：铁血大秦（全卷完结）**
+  - [x] [第 1 章 从邯郸肉票到千古一帝](docs/01-qin-shihuang.md)
+  - [x] [第 2 章 失控的战车与沙丘鲍鱼](docs/02-shaqiu-collapse.md)
+  - [x] [第 3 章 大泽乡的泥水与乱世合伙人](docs/03-dazexiang-uprising.md)
+- [ ] **第二卷：楚汉惊雷**（第 4–6 章，待更新）
+- [ ] 第 7–24 章（持续创作中）
 
 ---
 
@@ -38,10 +41,12 @@ mkdocs serve
 ```
 qinhan-book/
 ├── docs/
-│   ├── index.md                首页导读
-│   ├── 00-outline.md           全书总纲与人物志
-│   ├── 01-qin-shihuang.md      第 1 章：从邯郸肉票到千古一帝
-│   └── stylesheets/            排版与打印样式
+│   ├── index.md                    首页导读
+│   ├── 00-outline.md               全书总纲与人物志
+│   ├── 01-qin-shihuang.md          第 1 章：从邯郸肉票到千古一帝
+│   ├── 02-shaqiu-collapse.md       第 2 章：失控的战车与沙丘鲍鱼
+│   ├── 03-dazexiang-uprising.md    第 3 章：大泽乡的泥水与乱世合伙人
+│   └── stylesheets/                排版与打印样式
 ├── .github/
 │   └── workflows/deploy.yml    GitHub Pages 自动部署工作流
 ├── mkdocs.yml

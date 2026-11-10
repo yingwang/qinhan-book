@@ -39,6 +39,8 @@ nav:
     - 全书总纲与人物志: 00-outline.md
   - 第一卷 铁血大秦:
     - 第 1 章 从邯郸肉票到千古一帝: 01-qin-shihuang.md
+    - 第 2 章 失控的战车与沙丘鲍鱼: 02-shaqiu-collapse.md
+    - 第 3 章 大泽乡的泥水与乱世合伙人: 03-dazexiang-uprising.md
 
 markdown_extensions:
   - admonition
