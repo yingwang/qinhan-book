@@ -1,0 +1,68 @@
+.md-typeset {
+  line-height: 1.8;
+}
+
+.md-typeset p {
+  margin-bottom: 1.05em;
+}
+
+.md-typeset blockquote {
+  border-left-width: 0.22rem;
+}
+
+@page {
+  size: A4;
+  margin: 14mm;
+}
+
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer,
+  .md-top,
+  .md-dialog,
+  .md-content__button,
+  .md-source-file {
+    display: none !important;
+  }
+
+  html,
+  body,
+  .md-container,
+  .md-main,
+  .md-main__inner,
+  .md-content,
+  .md-content__inner {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  .md-main__inner {
+    display: block !important;
+  }
+
+  .md-typeset {
+    font-size: 10pt;
+    line-height: 1.55;
+  }
+
+  .md-typeset a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .md-typeset table:not([class]),
+  .md-typeset blockquote,
+  .md-typeset .admonition {
+    break-inside: avoid;
+  }
+
+  .md-typeset h2,
+  .md-typeset h3 {
+    break-after: avoid;
+  }
+}

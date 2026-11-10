@@ -1,0 +1,69 @@
+site_name: 秦汉那些事儿：帝国初生的四百年
+site_description: 一部用现代白话拆解中华第一帝国兴衰的长篇历史书（前259—公元220）
+site_author: Ying Wang
+site_url: https://yingwang.github.io/qinhan-book/
+repo_url: https://github.com/yingwang/qinhan-book
+repo_name: yingwang/qinhan-book
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: 切到夜间模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: 切到日间模式
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+nav:
+  - 首页: index.md
+  - 总纲与设定:
+    - 全书总纲与人物志: 00-outline.md
+  - 第一卷 铁血大秦:
+    - 第 1 章 从邯郸肉票到千古一帝: 01-qin-shihuang.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yingwang
