@@ -26,9 +26,8 @@ BOOK_MAIN_TITLE = "秦汉那些事儿"
 BOOK_AUTHOR = "Ying Wang"
 BOOK_LANG = "zh-CN"
 BOOK_DESC = (
-    "一部用现代白话拆解中华第一帝国兴衰的长篇历史叙事（全书六卷二十四章完结）。"
-    "从公元前259年邯郸小巷里的秦国质子，讲到公元220年繁阳受禅台上的末代汉帝——"
-    "叙事横跨近四百八十年（自前221年大秦一统算起恰为四百四十年帝国周期），"
+    "一部用现代大白话拆解中华第一帝国兴衰的长篇历史叙事（全书六卷二十四章完结，纯汉字约25万字）。"
+    "从公元前259年邯郸小巷里的秦国质子，讲到公元220年许昌受禅台上的末代汉帝——前后将近四百八十年，"
     "还原硬核史料背后的人性博弈、制度逻辑与家国悲欢。"
 )
 
@@ -50,7 +49,7 @@ VOLUMES = [
         "num": "第二卷",
         "title": "楚汉惊雷",
         "era": "公元前 207 年 — 公元前 195 年",
-        "desc": "鸿门宴、暗度陈仓、背水破赵与霸王别姬",
+        "desc": "鸿门宴、暗度陈仓、韩信封神与霸王别姬",
         "chapters": [
             ("ch04", "04-hongmen-chencang.md", "第四章 鸿门宴上的微表情与暗度陈仓"),
             ("ch05", "05-pengcheng-hanxin.md", "第五章 打不死的刘邦与韩信封神"),
@@ -107,7 +106,7 @@ VOLUMES = [
             ("ch20", "20-qingliu-danggu.md", "第二十章 清流热血与党锢绝响"),
             ("ch21", "21-huangjin-dongzhuo.md", "第二十一章 黄巾惊雷与董卓焚洛"),
             ("ch22", "22-changan-xuchang.md", "第二十二章 长安废墟与许昌棋局"),
-            ("ch23", "23-yidai-xunyu.md", "第二十三章 衣带诏之血与荀彧之死"),
+            ("ch23", "23-yidai-xunyu.md", "第二十三章 衣带诏与荀彧之死"),
             ("ch24", "24-shouchantai-finale.md", "第二十四章 受禅台上的背影与四百年回响"),
         ],
     },
@@ -279,7 +278,7 @@ def generate_cover(out_path: Path) -> None:
     draw_centered_text(draw, W, 2060, f"{BOOK_AUTHOR}  著", font_author, ivory, tracking=6)
 
     font_pub = load_font(28, "regular")
-    draw_centered_text(draw, W, 2165, "全本考订版 · 六卷二十四章完结本", font_pub, gold_dim, tracking=5)
+    draw_centered_text(draw, W, 2165, "全本典藏版 · 二十五万字完结本", font_pub, gold_dim, tracking=5)
 
     img.save(out_path, format="JPEG", quality=92, optimize=True)
 
@@ -563,14 +562,13 @@ def build_epub() -> None:
     title_xhtml = xhtml_doc(
         BOOK_TITLE,
         f"""<div class="title-box">
-  <p class="book-kicker">公元前 259 — 公元 220 · 中华第一帝国兴衰录</p>
+  <p class="book-kicker">公元前 259 — 公元 220 · 近四百八十年帝国兴衰录</p>
   <h1 class="book-main-title">{html.escape(BOOK_MAIN_TITLE)}</h1>
   <p class="book-subtitle">{html.escape(BOOK_SUBTITLE)}</p>
   <p style="text-align:center; margin-top:1.5em;"><strong>{html.escape(BOOK_AUTHOR)}</strong> 著</p>
 </div>
 <div class="copyright-note">
-  <p>全书共六卷 · 二十四章（考订完结本）</p>
-  <p>叙事跨度：前 259 年嬴政生于邯郸 — 公元 220 年曹丕代汉（自前 221 年秦一统计四百四十年）</p>
+  <p>全书共六卷 · 二十四章 · 纯汉字约 25 万字（全本完结）</p>
   <p>在线阅读：<a href="https://yingwang.github.io/qinhan-book/">yingwang.github.io/qinhan-book</a></p>
   <p>开源仓库：<a href="https://github.com/yingwang/qinhan-book">github.com/yingwang/qinhan-book</a></p>
   <p>版权许可：CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）</p>
@@ -578,9 +576,9 @@ def build_epub() -> None:
     )
     pages.append(("title-page", "titlepage.xhtml", "书名与版权页", title_xhtml, "", "yes"))
 
-    # 3. Preface (导读与体例说明)
-    preface_xhtml = xhtml_doc("导读与体例说明", md_to_xhtml_body(build_preface_md()))
-    pages.append(("preface", "preface.xhtml", "导读与体例说明", preface_xhtml, "", "yes"))
+    # 3. Preface (导读)
+    preface_xhtml = xhtml_doc("导读：这本书怎么写历史", md_to_xhtml_body(build_preface_md()))
+    pages.append(("preface", "preface.xhtml", "导读：这本书怎么写历史", preface_xhtml, "", "yes"))
 
     # 4. Outline (全书总纲与人物志)
     outline_md = (DOCS_DIR / "00-outline.md").read_text(encoding="utf-8")
@@ -624,7 +622,7 @@ def build_epub() -> None:
   <ol>
     <li><a href="cover.xhtml">封面</a></li>
     <li><a href="titlepage.xhtml">书名与版权页</a></li>
-    <li><a href="preface.xhtml">导读与体例说明</a></li>
+    <li><a href="preface.xhtml">导读：这本书怎么写历史</a></li>
     <li><a href="ch00-outline.xhtml">全书总纲与人物志</a></li>
 {chr(10).join(toc_vol_items)}
   </ol>
@@ -647,7 +645,7 @@ def build_epub() -> None:
         ("cover-page", "cover.xhtml", "封面"),
         ("title-page", "titlepage.xhtml", "书名与版权页"),
         ("nav", "nav.xhtml", "全书目录"),
-        ("preface", "preface.xhtml", "导读与体例说明"),
+        ("preface", "preface.xhtml", "导读：这本书怎么写历史"),
         ("ch00", "ch00-outline.xhtml", "全书总纲与人物志"),
     ]:
         ncx_points.append(
