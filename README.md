@@ -4,6 +4,8 @@
 
 **在线阅读（GitHub Pages）**：[yingwang.github.io/qinhan-book](https://yingwang.github.io/qinhan-book/)
 
+**EPUB 全本电子书下载**：[点击下载 qinhan-book.epub（约 602 KB）](https://yingwang.github.io/qinhan-book/downloads/qinhan-book.epub) ｜ [GitHub Raw 备用直链](https://github.com/yingwang/qinhan-book/raw/main/docs/downloads/qinhan-book.epub)（支持 Apple 图书、微信读书、Kindle、Calibre 等）
+
 ---
 
 ## 全书目录（六卷 · 二十四章 · 全本完结）
@@ -42,11 +44,14 @@
 
 ---
 
-## 本地预览
+## 本地预览与构建 EPUB
 
 ```bash
 pip install -r requirements.txt
 mkdocs serve
+
+# 重新生成封面与 EPUB 3.0 电子书（需安装 Pillow 与 Markdown）
+python3 scripts/build_epub.py
 ```
 
 ---
@@ -61,7 +66,11 @@ qinhan-book/
 │   ├── 01-qin-shihuang.md              第一卷：第 1–3 章（铁血大秦）
 │   ├── ...
 │   ├── 24-shouchantai-finale.md        第六卷：第 19–24 章（东京残照）
+│   ├── assets/cover.jpg                电子书精装封面
+│   ├── downloads/qinhan-book.epub      全本 EPUB 3.0 电子书
 │   └── stylesheets/                    排版与打印样式
+├── scripts/
+│   └── build_epub.py                   EPUB 3.0 与封面自动构建脚本
 ├── .github/
 │   └── workflows/deploy.yml            GitHub Pages 自动部署工作流
 ├── mkdocs.yml
