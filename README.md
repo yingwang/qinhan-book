@@ -1,10 +1,10 @@
 # 秦汉那些事儿：帝国初生的四百年
 
-> 一部用现代白话拆解中华第一帝国兴衰的长篇历史书（全书六卷 · 二十四章完结，纯汉字约 24 万字）。从公元前 259 年赵国邯郸小巷里的秦国质子，讲到公元 220 年许昌受禅台上的末代汉帝——纵贯四百四十余年，还原硬核史料背后的人性博弈、制度逻辑与家国悲欢。
+> 一部用现代白话拆解中华第一帝国兴衰的长篇历史书（全书六卷 · 二十四章完结）。从公元前 259 年赵国邯郸小巷里的秦国质子，讲到公元 220 年繁阳受禅台上的末代汉帝——叙事横跨近四百八十年（自前 221 年大秦一统算起，恰为四百四十年帝国周期），还原硬核史料背后的人性博弈、制度逻辑与家国悲欢。
 
 **在线阅读（GitHub Pages）**：[yingwang.github.io/qinhan-book](https://yingwang.github.io/qinhan-book/)
 
-**EPUB 全本电子书下载**：[点击下载 qinhan-book.epub（约 602 KB）](https://yingwang.github.io/qinhan-book/downloads/qinhan-book.epub) ｜ [GitHub Raw 备用直链](https://github.com/yingwang/qinhan-book/raw/main/docs/downloads/qinhan-book.epub)（支持 Apple 图书、微信读书、Kindle、Calibre 等）
+**EPUB 全本电子书下载**：[点击下载 qinhan-book.epub](https://yingwang.github.io/qinhan-book/downloads/qinhan-book.epub) ｜ [GitHub Raw 备用直链](https://github.com/yingwang/qinhan-book/raw/main/docs/downloads/qinhan-book.epub)（支持 Apple 图书、微信读书、Kobo、Calibre 阅读，并可通过 Send to Kindle 发送至 Kindle）
 
 ---
 
@@ -66,7 +66,7 @@ qinhan-book/
 │   ├── 01-qin-shihuang.md              第一卷：第 1–3 章（铁血大秦）
 │   ├── ...
 │   ├── 24-shouchantai-finale.md        第六卷：第 19–24 章（东京残照）
-│   ├── assets/cover.jpg                电子书精装封面
+│   ├── assets/cover.jpg                电子书封面
 │   ├── downloads/qinhan-book.epub      全本 EPUB 3.0 电子书
 │   └── stylesheets/                    排版与打印样式
 ├── scripts/
